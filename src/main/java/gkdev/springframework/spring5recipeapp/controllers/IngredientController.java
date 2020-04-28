@@ -2,7 +2,7 @@ package gkdev.springframework.spring5recipeapp.controllers;
 
 import gkdev.springframework.spring5recipeapp.services.RecipeService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @project spring5-recipe-app
  */
 @Slf4j
-@Service
+@Controller
 public class IngredientController {
 
     private final RecipeService recipeService;
