@@ -1,5 +1,6 @@
 package gkdev.springframework.spring5recipeapp.controllers;
 
+import gkdev.springframework.spring5recipeapp.commands.IngredientCommand;
 import gkdev.springframework.spring5recipeapp.services.IngredientService;
 import gkdev.springframework.spring5recipeapp.services.RecipeService;
 import gkdev.springframework.spring5recipeapp.services.UnitOfMeasureService;
@@ -7,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -61,5 +63,13 @@ public class IngredientController {
         return "recipe/ingredient/ingredientform";
     }
 
+    public String saveOrUpdate(@ModelAttribute IngredientCommand command) {
+        IngredientCommand savedCommand = ingredientService.saveIngredientCommand(command);
+
+        log.debug("saved recipe id : " + savedCommand.getRecipeId());
+        log.debug("saved ingredient id : " + savedCommand.getId());
+
+        return "redirect:/recipe/" + savedCommand.getRecipeId() + "/ingredient/" + savedCommand.getId() + "/show";
+    }
 
 }
