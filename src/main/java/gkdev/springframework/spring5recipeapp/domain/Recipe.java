@@ -47,7 +47,7 @@ public class Recipe {
     private Set<Ingredient> ingredients = new HashSet<>();
 
     @Lob
-    private Byte[] image;
+    private Byte[] image; // Hibernate team recommends to use the wrappers for the primitive.
 
     @Enumerated(value = EnumType.STRING) // STRING for enum future update is more better !
     private Difficulty difficulty;
