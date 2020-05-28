@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/konstantinrov/spring5-recipe-app.svg?style=svg)](https://circleci.com/gh/konstantinrov/spring5-recipe-app)
+[![codecov](https://codecov.io/gh/konstantinrov/spring5-recipe-app/branch/master/graph/badge.svg)](https://codecov.io/gh/konstantinrov/spring5-recipe-app)
 
 # spring5-recipe-app
 Recipe Project
